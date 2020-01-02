@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anAddProduct" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.view.AddProductController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="10.0" prefHeight="516.0" prefWidth="953.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="19.0" prefHeight="420.0" prefWidth="392.0">
+               <children>
+                  <GridPane layoutX="25.0" layoutY="95.0" prefHeight="231.0" prefWidth="367.0">
+                     <children>
+                        <Label fx:id="lblID" prefHeight="21.0" prefWidth="71.0" text="ID" />
+                        <Label fx:id="lblName" text="Name" GridPane.rowIndex="1" />
+                        <Label fx:id="lblInv" text="Inv" GridPane.rowIndex="2" />
+                        <Label fx:id="lblPrice" text="Price" GridPane.rowIndex="3" />
+                        <Label fx:id="lblMax" text="Max" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtID" disable="true" GridPane.columnIndex="1" GridPane.columnSpan="3" />
+                        <TextField fx:id="txtPartName" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtInv" prefHeight="31.0" prefWidth="79.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPrice" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtMax" prefHeight="31.0" prefWidth="104.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="lblMin" prefHeight="21.0" prefWidth="71.0" text="Min" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtMin" prefHeight="30.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="94.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="96.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="49.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="56.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="0.0" prefWidth="23.0" />
+                     </columnConstraints>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <Label fx:id="lblTitle" layoutX="50.0" layoutY="32.0" prefHeight="27.0" prefWidth="293.0" text="Add Product" textFill="#1c108d">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tblParts1" layoutX="427.0" layoutY="70.0" prefHeight="136.0" prefWidth="482.0">
+              <columns>
+                <TableColumn fx:id="colPartID" prefWidth="120.0" text="Part ID" />
+                <TableColumn fx:id="colPartName" prefWidth="120.0" text="Part Name" />
+                  <TableColumn fx:id="colInventoryParts" prefWidth="120.0" text="Inventory Level" />
+                  <TableColumn fx:id="colCostParts" prefWidth="120.0" text="Price Per Unit" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tblParts2" layoutX="427.0" layoutY="273.0" prefHeight="136.0" prefWidth="482.0">
+               <columns>
+                  <TableColumn fx:id="colPartID2" prefWidth="120.0" text="Part ID" />
+                  <TableColumn fx:id="colPartName2" prefWidth="120.0" text="Part Name" />
+                  <TableColumn fx:id="colInventoryParts2" prefWidth="120.0" text="Inventory Level" />
+                  <TableColumn fx:id="colCostParts2" prefWidth="120.0" text="Price Per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="btnSearch" layoutX="613.0" layoutY="27.0" mnemonicParsing="false" onAction="#onSearch" prefWidth="71.0" text="Search" />
+            <TextField fx:id="txtSearch" layoutX="704.0" layoutY="27.0" />
+            <Button fx:id="btnAdd" layoutX="798.0" layoutY="223.0" mnemonicParsing="false" onAction="#onAdd" prefWidth="71.0" text="Add" />
+            <Button fx:id="btnDelete" layoutX="798.0" layoutY="424.0" mnemonicParsing="false" onAction="#onDelete" prefWidth="71.0" text="Delete" />
+            <Button fx:id="btnCancel" layoutX="798.0" layoutY="471.0" mnemonicParsing="false" onAction="#onCancel" prefWidth="71.0" text="Cancel" />
+            <Button fx:id="btnSave" layoutX="711.0" layoutY="471.0" mnemonicParsing="false" onAction="#onSave" prefWidth="71.0" text="Save" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
